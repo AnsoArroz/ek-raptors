@@ -1,3 +1,6 @@
+// ==========================================
+// 1. LÓGICA DEL SLIDER DE IMÁGENES
+// ==========================================
 const slides = [
     "img/1.png", "img/2.png", "img/3.png", "img/4.png",
     "img/5.png", "img/6.png", "img/7.png", "img/8.png",
@@ -9,40 +12,47 @@ const slideElement = document.getElementById("current-slide");
 const btnPrev = document.getElementById("btn-prev");
 const btnNext = document.getElementById("btn-next");
 
-function updateSlide() {
-    slideElement.style.opacity = 0;
-    setTimeout(() => {
-        slideElement.src = slides[currentIndex];
-        slideElement.style.opacity = 1;
-    }, 300); 
+if (slideElement && btnPrev && btnNext) {
+    function updateSlide() {
+        slideElement.style.opacity = 0;
+        setTimeout(() => {
+            slideElement.src = slides[currentIndex];
+            slideElement.style.opacity = 1;
+        }, 300); 
+    }
+
+    btnNext.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide();
+    });
+
+    btnPrev.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide();
+    });
 }
 
-btnNext.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlide();
-});
-
-btnPrev.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateSlide();
-});
-
+// ==========================================
+// 2. LÓGICA DEL MENÚ FLOTANTE
+// ==========================================
 const floatingBtn = document.getElementById('floating-btn');
 const floatingMenu = document.getElementById('floating-menu');
 
-floatingBtn.addEventListener('click', () => {
-    floatingMenu.classList.toggle('show');
-});
+if (floatingBtn && floatingMenu) {
+    floatingBtn.addEventListener('click', () => {
+        floatingMenu.classList.toggle('show');
+    });
 
-document.addEventListener('click', (event) => {
-    if (!floatingBtn.contains(event.target) && !floatingMenu.contains(event.target)) {
-        floatingMenu.classList.remove('show');
-    }
-});
+    document.addEventListener('click', (event) => {
+        if (!floatingBtn.contains(event.target) && !floatingMenu.contains(event.target)) {
+            floatingMenu.classList.remove('show');
+        }
+    });
+}
 
-// NUEVO: Lógica del Loop de Instagram
-// Pon aquí los códigos de las publicaciones. 
-// Ejemplo: si el link es instagram.com/p/C123XYZ/, el ID es C123XYZ
+// ==========================================
+// 3. LOOP DE INSTAGRAM
+// ==========================================
 const instagramPosts = [
     "https://www.instagram.com/p/DXNXJkcEeLn/embed",
     "https://www.instagram.com/p/DWZiHsVkQ6w/embed",
@@ -54,37 +64,41 @@ const instagramPosts = [
 let currentIgIndex = 0;
 const igFrame = document.getElementById("ig-frame");
 
-// Carga el primer post inmediatamente
 if (igFrame && instagramPosts.length > 0) {
+    // Carga el primer post inmediatamente
     igFrame.src = instagramPosts[0];
+
+    // Cambia el post cada 30 segundos (30000 milisegundos)
+    setInterval(() => {
+        currentIgIndex = (currentIgIndex + 1) % instagramPosts.length;
+        
+        // Un pequeño efecto de opacidad para que el cambio no sea tan brusco
+        igFrame.style.transition = "opacity 0.5s ease";
+        igFrame.style.opacity = 0;
+        
+        setTimeout(() => {
+            igFrame.src = instagramPosts[currentIgIndex];
+            igFrame.style.opacity = 1;
+        }, 500);
+
+    }, 30000);
 }
 
-// Cambia el post cada 30 segundos (30000 milisegundos)
-setInterval(() => {
-    currentIgIndex = (currentIgIndex + 1) % instagramPosts.length;
-    
-    // Un pequeño efecto de opacidad para que el cambio no sea tan brusco
-    igFrame.style.opacity = 0;
-    setTimeout(() => {
-        igFrame.src = instagramPosts[currentIgIndex];
-        igFrame.style.opacity = 1;
-    }, 500);
-
-}, 30000);
-/* === CONFIGURACIÓN DE PARTICLES.JS === */
-/* Asegúrate de poner esto al final de tu script.js actual */
+// ==========================================
+// 4. FONDO ANIMADO (PARTICLES.JS)
+// ==========================================
 if(document.getElementById('particles-js')) {
     particlesJS('particles-js', {
       "particles": {
         "number": {
-          "value": 80, /* Cantidad de estrellas */
+          "value": 80,
           "density": {
             "enable": true,
             "value_area": 800
           }
         },
         "color": {
-          "value": ["#00ffaa", "#b026ff", "#ffffff"] /* Colores Ek'Raptors */
+          "value": ["#00ffaa", "#b026ff", "#ffffff"]
         },
         "shape": {
           "type": "circle",
@@ -106,7 +120,7 @@ if(document.getElementById('particles-js')) {
         },
         "move": {
           "enable": true,
-          "speed": 2, /* Velocidad de movimiento */
+          "speed": 2,
           "direction": "none",
           "random": true,
           "straight": false,
@@ -119,11 +133,11 @@ if(document.getElementById('particles-js')) {
         "events": {
           "onhover": {
             "enable": true,
-            "mode": "grab" /* Las líneas siguen al cursor */
+            "mode": "grab"
           },
           "onclick": {
             "enable": true,
-            "mode": "push" /* Agrega más al dar clic */
+            "mode": "push"
           },
           "resize": true
         },
