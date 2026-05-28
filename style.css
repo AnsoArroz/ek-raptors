@@ -309,3 +309,117 @@ header, main, footer {
         align-items: center;
     }
 }
+/* ==========================================
+   ESTILOS PARA LA PÁGINA DE REDES (LINKTREE)
+   ========================================== */
+
+.wrapper-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 60px; /* Espacio para el logo */
+}
+
+.profile-logo {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.4);
+    background-color: var(--bg-dark);
+    overflow: hidden;
+}
+
+.profile-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-desc {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.linktree-btn .icon {
+    font-size: 1.8rem;
+    margin-right: 15px;
+}
+
+.linktree-btn .link-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.linktree-btn .link-text strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.linktree-btn .link-text span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Efectos Hover Multicolores */
+.ig-glow:hover {
+    transform: translateY(-5px);
+    border-color: #E1306C;
+    box-shadow: 0 10px 20px rgba(225, 48, 108, 0.3);
+}
+.ig-glow:hover .link-text strong { color: #E1306C; }
+
+.fb-glow:hover {
+    transform: translateY(-5px);
+    border-color: #1877F2;
+    box-shadow: 0 10px 20px rgba(24, 119, 242, 0.3);
+}
+.fb-glow:hover .link-text strong { color: #1877F2; }
+
+.mail-glow:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-green);
+    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.3);
+}
+.mail-glow:hover .link-text strong { color: var(--neon-green); }
+
+.back-btn {
+    margin-top: 10px;
+    display: inline-block;
+}
