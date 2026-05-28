@@ -1,23 +1,4 @@
-/* --- Ajustes Responsivos Generales --- */
-* {
-    box-sizing: border-box; /* Evita que el padding rompa los tamaños */
-}
-
-img, iframe, video {
-    max-width: 100%; /* Evita que las imágenes se salgan de su contenedor */
-    height: auto;
-}
-
-/* Ajuste para que las secciones se adapten a cualquier pantalla */
-.presentation-section {
-    flex: 1 1 100%;
-    max-width: 100%;
-}
-
-.instagram-section {
-    flex: 1 1 100%;
-    max-width: 100%;
-} /* --- Variables y Configuración Base --- */
+/* --- Variables y Configuración Base --- */
 :root {
     --bg-dark: #0b0c10;
     --text-light: #c5c6c7;
@@ -26,13 +7,21 @@ img, iframe, video {
     --card-bg: #1f2833;
 }
 
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Evita que los márgenes rompan el tamaño */
+}
+
+body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+}
+
+img, iframe, video {
+    max-width: 100%; /* Previene que el contenido se desborde */
 }
 
 /* Tipografía Tecnológica para Títulos */
@@ -47,7 +36,7 @@ h1, h2, h3, .tagline {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1; /* Al fondo */
+    z-index: 1; /* Fondo interactivo */
 }
 
 .site-wrapper {
@@ -108,6 +97,43 @@ header, main, footer {
     flex: 1 1 300px;
 }
 
+/* --- Slider de Imágenes (Ajuste Perfecto Restaurado) --- */
+.slide-container {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantiene la proporción horizontal perfecta */
+    background-color: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 255, 170, 0.2);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.8);
+    margin-bottom: 1rem;
+}
+
+.slide-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Evita recortes y deformaciones */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Sección de Instagram (Ajuste Perfecto Restaurado) --- */
+.ig-container {
+    width: 100%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ig-container iframe {
+    width: 100%;
+    height: 480px; /* Recuperada la altura fija */
+    border: none;
+    background: white; 
+}
+
 /* --- Tarjetas 3D (Portafolio) --- */
 .portfolio-section {
     width: 100%;
@@ -135,7 +161,6 @@ header, main, footer {
     margin-top: 0;
 }
 
-/* Efecto Hover para Tarjetas */
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(176, 38, 255, 0.3);
@@ -185,7 +210,7 @@ header, main, footer {
     box-shadow: 0 5px 20px rgba(0, 255, 170, 0.5);
 }
 
-/* --- Menú Flotante (Ajuste visual) --- */
+/* --- Menú Flotante --- */
 .floating-container {
     position: fixed;
     bottom: 30px;
@@ -193,6 +218,40 @@ header, main, footer {
     z-index: 100;
 }
 
+.floating-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    align-items: flex-end;
+}
+
+.floating-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-item {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--neon-green);
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.menu-item:hover {
+    background-color: var(--neon-purple);
+    border-color: var(--neon-purple);
+}
+
+/* Botón flotante (Ajuste Perfecto Restaurado) */
 .floating-btn {
     background: linear-gradient(45deg, var(--neon-purple), var(--neon-green));
     border: none;
@@ -201,8 +260,50 @@ header, main, footer {
     height: 60px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden; 
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .floating-btn img {
-    width: 35px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el logo perfectamente al círculo */
+}
+
+/* --- Extra Pages (FAQ y Redes) --- */
+.extra-page-container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: rgba(31, 40, 51, 0.8); 
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 170, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.extra-page-container h2 {
+    color: var(--neon-green);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+/* --- Ajustes Responsivos para celulares --- */
+@media (max-width: 900px) {
+    .content-layout {
+        flex-direction: column;
+    }
+    .presentation-section, .instagram-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
