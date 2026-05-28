@@ -71,3 +71,74 @@ setInterval(() => {
     }, 500);
 
 }, 30000);
+/* === CONFIGURACIÓN DE PARTICLES.JS === */
+/* Asegúrate de poner esto al final de tu script.js actual */
+if(document.getElementById('particles-js')) {
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 80, /* Cantidad de estrellas */
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": ["#00ffaa", "#b026ff", "#ffffff"] /* Colores Ek'Raptors */
+        },
+        "shape": {
+          "type": "circle",
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#c5c6c7",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2, /* Velocidad de movimiento */
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab" /* Las líneas siguen al cursor */
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push" /* Agrega más al dar clic */
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 0.8
+            }
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+}
