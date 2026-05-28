@@ -54,8 +54,8 @@ if (floatingBtn && floatingMenu) {
 // 3. LOOP DE INSTAGRAM
 // ==========================================
 const instagramPosts = [
-    "https://www.instagram.com/p/DXNXJkcEeLn/embed",
     "https://www.instagram.com/p/DWZiHsVkQ6w/embed",
+    "https://www.instagram.com/p/DXNXJkcEeLn/embed",
     "https://www.instagram.com/p/DYsWFgwRiZk/embed",
     "https://www.instagram.com/p/DWYhutAEdvC/embed",
     "https://www.instagram.com/p/DXgKrLujkpe/embed"
