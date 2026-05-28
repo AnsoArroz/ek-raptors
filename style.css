@@ -1,4 +1,23 @@
-/* --- Variables y Configuración Base --- */
+/* --- Ajustes Responsivos Generales --- */
+* {
+    box-sizing: border-box; /* Evita que el padding rompa los tamaños */
+}
+
+img, iframe, video {
+    max-width: 100%; /* Evita que las imágenes se salgan de su contenedor */
+    height: auto;
+}
+
+/* Ajuste para que las secciones se adapten a cualquier pantalla */
+.presentation-section {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.instagram-section {
+    flex: 1 1 100%;
+    max-width: 100%;
+} /* --- Variables y Configuración Base --- */
 :root {
     --bg-dark: #0b0c10;
     --text-light: #c5c6c7;
