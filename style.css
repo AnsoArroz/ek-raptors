@@ -95,6 +95,8 @@ header, main, footer {
 
 .instagram-section {
     flex: 1 1 300px;
+    max-width: 400px; /* Obliga a la sección a mantener el ancho de un celular */
+    margin: 0 auto; /* La mantiene centrada si se pasa a su propia línea */
 }
 
 /* --- Slider de Imágenes (Ajuste Perfecto Restaurado) --- */
