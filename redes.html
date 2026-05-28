@@ -3,22 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestras Redes | Ek'Raptors</title>
+    <title>Conecta con Ek'Raptors</title>
+    
     <link rel="icon" type="image/png" href="img/EkRaptorsLogoToon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="fade-in">
-        <div class="extra-page-container">
-            <h2>Nuestras Redes</h2>
-            <p style="margin-bottom: 30px; color: #ccc;">¡Síguenos para estar al tanto de nuestros proyectos y competencias!</p>
-            
-            <a href="https://www.instagram.com/ekraptors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="linktree-btn">📷 Instagram</a>
-            <a href="https://www.facebook.com/share/1JMH4VygL3/" target="_blank" class="linktree-btn">📘 Facebook</a>
-            <a href="mailto:ek.raptors@upy.edu.mx" class="linktree-btn">✉️ Correo Electrónico</a>
+    <!-- Fondo animado -->
+    <div id="particles-js"></div>
 
-            <a href="index.html" class="contact-btn back-btn">⬅ Volver al inicio</a>
+    <!-- Contenedor principal centrado -->
+    <main class="site-wrapper fade-in wrapper-centered">
+        <div class="extra-page-container profile-card">
+            
+            <!-- Logo flotante -->
+            <div class="profile-logo">
+                <img src="img/EkRaptorsLogoToon.png" alt="Logo Ek'Raptors">
+            </div>
+            
+            <h2>Nuestras Redes</h2>
+            <p class="profile-desc">Sigue de cerca el desarrollo de nuestros robots y acompáñanos en cada competencia.</p>
+            
+            <div class="links-grid">
+                <a href="https://www.instagram.com/ekraptors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="linktree-btn ig-glow">
+                    <span class="icon">📷</span>
+                    <div class="link-text">
+                        <strong>Instagram</strong>
+                        <span>Fotos, Reels y día a día</span>
+                    </div>
+                </a>
+                
+                <a href="https://www.facebook.com/share/1JMH4VygL3/" target="_blank" class="linktree-btn fb-glow">
+                    <span class="icon">📘</span>
+                    <div class="link-text">
+                        <strong>Facebook</strong>
+                        <span>Anuncios y comunidad</span>
+                    </div>
+                </a>
+                
+                <a href="mailto:ek.raptors@upy.edu.mx" class="linktree-btn mail-glow">
+                    <span class="icon">✉️</span>
+                    <div class="link-text">
+                        <strong>Correo Institucional</strong>
+                        <span>Contacto para patrocinadores</span>
+                    </div>
+                </a>
+            </div>
+
+            <a href="index.html" class="action-btn back-btn">⬅ Volver a la Base</a>
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
