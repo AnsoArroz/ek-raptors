@@ -10,7 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Evita que los márgenes rompan el tamaño */
+    box-sizing: border-box;
 }
 
 body {
@@ -21,10 +21,9 @@ body {
 }
 
 img, iframe, video {
-    max-width: 100%; /* Previene que el contenido se desborde */
+    max-width: 100%;
 }
 
-/* Tipografía Tecnológica para Títulos */
 h1, h2, h3, .tagline {
     font-family: 'Orbitron', sans-serif;
 }
@@ -36,12 +35,12 @@ h1, h2, h3, .tagline {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1; /* Fondo interactivo */
+    z-index: 1;
 }
 
 .site-wrapper {
     position: relative;
-    z-index: 2; /* Todo el contenido sobre las partículas */
+    z-index: 2;
 }
 
 /* --- Títulos Neón --- */
@@ -82,7 +81,7 @@ header, main, footer {
 }
 
 .presentation-section, .instagram-section, .portfolio-section {
-    background: rgba(31, 40, 51, 0.8); /* Fondo semi-transparente */
+    background: rgba(31, 40, 51, 0.8);
     padding: 2rem;
     border-radius: 15px;
     border: 1px solid rgba(0, 255, 170, 0.2);
@@ -95,14 +94,14 @@ header, main, footer {
 
 .instagram-section {
     flex: 1 1 300px;
-    max-width: 400px; /* Obliga a la sección a mantener el ancho de un celular */
-    margin: 0 auto; /* La mantiene centrada si se pasa a su propia línea */
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-/* --- Slider de Imágenes (Ajuste Perfecto Restaurado) --- */
+/* --- Slider de Imágenes --- */
 .slide-container {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Mantiene la proporción horizontal perfecta */
+    aspect-ratio: 16 / 9;
     background-color: #000000;
     border-radius: 8px;
     overflow: hidden;
@@ -117,11 +116,11 @@ header, main, footer {
 .slide-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Evita recortes y deformaciones */
+    object-fit: contain;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* --- Sección de Instagram (Ajuste Perfecto Restaurado) --- */
+/* --- Sección de Instagram --- */
 .ig-container {
     width: 100%;
     background-color: #000;
@@ -131,7 +130,7 @@ header, main, footer {
 
 .ig-container iframe {
     width: 100%;
-    height: 480px; /* Recuperada la altura fija */
+    height: 480px;
     border: none;
     background: white; 
 }
@@ -180,6 +179,7 @@ header, main, footer {
     font-family: 'Orbitron', sans-serif;
     transition: all 0.3s;
     margin: 5px;
+    text-decoration: none;
 }
 
 .action-btn:hover {
@@ -253,7 +253,6 @@ header, main, footer {
     border-color: var(--neon-purple);
 }
 
-/* Botón flotante (Ajuste Perfecto Restaurado) */
 .floating-btn {
     background: linear-gradient(45deg, var(--neon-purple), var(--neon-green));
     border: none;
@@ -272,43 +271,9 @@ header, main, footer {
 .floating-btn img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta el logo perfectamente al círculo */
+    object-fit: cover;
 }
 
-/* --- Extra Pages (FAQ y Redes) --- */
-.extra-page-container {
-    max-width: 800px;
-    margin: 60px auto;
-    background: rgba(31, 40, 51, 0.8); 
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 255, 170, 0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    text-align: center;
-    backdrop-filter: blur(5px);
-}
-
-.extra-page-container h2 {
-    color: var(--neon-green);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
-
-/* --- Ajustes Responsivos para celulares --- */
-@media (max-width: 900px) {
-    .content-layout {
-        flex-direction: column;
-    }
-    .presentation-section, .instagram-section {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 /* ==========================================
    ESTILOS PARA LA PÁGINA DE REDES (LINKTREE)
    ========================================== */
@@ -326,7 +291,12 @@ header, main, footer {
     max-width: 450px;
     margin: 0 auto;
     position: relative;
-    padding-top: 60px; /* Espacio para el logo */
+    padding-top: 60px;
+    background: rgba(31, 40, 51, 0.8);
+    padding-bottom: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 170, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 .profile-logo {
@@ -353,6 +323,7 @@ header, main, footer {
     color: var(--text-light);
     margin-bottom: 2rem;
     font-size: 0.95rem;
+    padding: 0 15px;
 }
 
 .links-grid {
@@ -360,6 +331,7 @@ header, main, footer {
     flex-direction: column;
     gap: 15px;
     margin-bottom: 30px;
+    padding: 0 20px;
 }
 
 .linktree-btn {
@@ -369,8 +341,8 @@ header, main, footer {
     background-color: var(--card-bg);
     border: 1px solid #333;
     border-radius: 12px;
-    text-decoration: none;
-    color: var(--text-light);
+    text-decoration: none !important;
+    color: var(--text-light) !important;
     transition: all 0.3s ease;
     text-align: left;
 }
@@ -397,7 +369,6 @@ header, main, footer {
     color: #888;
 }
 
-/* Efectos Hover Multicolores */
 .ig-glow:hover {
     transform: translateY(-5px);
     border-color: #E1306C;
@@ -422,4 +393,19 @@ header, main, footer {
 .back-btn {
     margin-top: 10px;
     display: inline-block;
+}
+
+/* --- Ajustes Responsivos (SIEMPRE AL FINAL) --- */
+@media (max-width: 900px) {
+    .content-layout {
+        flex-direction: column;
+    }
+    .presentation-section, .instagram-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
